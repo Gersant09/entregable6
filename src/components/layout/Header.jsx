@@ -5,26 +5,29 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Header = () => {
 
-const {token} = useSelector(store=> store.userInfo)
+  const { token } = useSelector(store => store.userInfo)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
-const handleClickChangeShowCart = ()=>{
-  if(!token)return navigate("/login")
-  dispatch(changeIsShowCart())
-}
+  const handleClickChangeShowCart = () => {
+    if (!token) return navigate("/login")
+    dispatch(changeIsShowCart())
+  }
 
   return (
     <section>
       <Link to="/">
-        <h1>gs-commerce</h1>
+        <h1 className='text-4xl text-red-500 font-bold p-4'>GS-commerce</h1>
       </Link>
 
-      <nav>
-        <Link to="/login"><i className='bx bx-user'></i></Link>
-        <Link to="/purchases"><i className='bx bx-box' ></i></Link>
-        <button onClick={handleClickChangeShowCart}><i className='bx bx-cart' ></i></button>
-      </nav>
+      <div className='font-bold text-2xl flex justify-end p-5 '>
+        <nav className=' border-[1px] '>
+          <Link to="/login"><i className='bx bx-user border-[1px] hover:text-red-500'></i></Link>
+          <Link to="/purchases"><i className='bx bx-box border-[1px] hover:text-red-500' ></i></Link>
+          <button onClick={handleClickChangeShowCart}><i className='bx bx-cart border-[1px] hover:text-red-500' ></i></button>
+        </nav>
+      </div>
+
     </section>
   )
 }
