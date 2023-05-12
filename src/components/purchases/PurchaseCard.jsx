@@ -8,7 +8,7 @@ const PurchaseCard = ({ purchase }) => {
 
             <section className='flex gap-2 items-center'>
                 <div className='h-[50px] sm:h-[80px] aspect-square'>
-                    <img className='h-full w-full object-contain' loading='lazy' src={purchase.product.images[0].url} alt="" />
+                    <img className='h-full w-full object-contain' loading='lazy' src={purchase.product.images[2].url} alt="" />
                 </div>
                 <h4 >{purchase.product.title}</h4>
             </section>

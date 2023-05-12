@@ -7,6 +7,7 @@ import Product from './pages/Product'
 import Header from './components/layout/Header'
 import NotFound from './pages/NotFound'
 import ProtectedAuth from './components/auth/ProtectedAuth'
+import Cart from './components/cart/Cart'
 
 function App() {
   
@@ -27,6 +28,7 @@ function App() {
         <Route path='/products/:id' element={<Product />}/>
         <Route path='/*' element={<NotFound />}/>
       </Routes>
+      <Cart />
     </section>
   )
 }

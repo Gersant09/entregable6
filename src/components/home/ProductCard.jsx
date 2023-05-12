@@ -1,10 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addProductCart } from '../../store/slices/cart.slice'
 
 const ProductCard = ({product}) => {
+
+  const dispatch = useDispatch()
+
 const handleClickAddProduct = (e)=>{
 e.preventDefault()
-
+dispatch(addProductCart({productId: product.id, quantity:1}))
 }
 
 
